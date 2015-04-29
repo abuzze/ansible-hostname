@@ -1,0 +1,12 @@
+---
+- name: "set /etc/hostname"
+  when: hostname is defined
+  hostname: name={{ hostname }}
+
+- name: "set /etc/hosts"
+  when: hostname is defined
+  lineinfile: dest=/etc/hosts
+              line="127.0.0.1 {{ hostname }}"
+              owner=root
+              group=root
+              mode=0644

@@ -1,0 +1,12 @@
+---
+galaxy_info:
+  author: Jonathan Underwood
+  company: jyunderwood.com
+  description: "Sets the hostname in /etc/hostname and /etc/hosts"
+  license: MIT
+  min_ansible_version: 1.6
+
+  categories:
+    - system
+
+dependencies: []
