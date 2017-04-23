@@ -2,6 +2,13 @@
 - name: "set /etc/hostname"
   when: hostname is defined
   hostname: name={{ hostname }}
+  
+- name: "set ansible info in /etc/hosts"
+  when: fqdn is defined
+  lineinfile: dest=/etc/hosts
+              line="# Settings managed by ansible. Do not modify."
+              state=present
+              insertbefore=BOF
 
 - name: "set /etc/hosts"
   when: hostname is defined
